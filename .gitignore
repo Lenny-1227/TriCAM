@@ -1,0 +1,26 @@
+# Datasets and generated features
+codes/data/
+*.npy
+*.npz
+*.csv
+*.inter
+*.json.gz
+*.b
+
+# Training outputs
+codes/models/
+codes/debug_data/
+*.log
+
+# Python cache and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
