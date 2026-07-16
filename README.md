@@ -57,8 +57,8 @@ The experiments use the following datasets:
 
 The raw datasets must be downloaded from their original providers:
 
-- Men Clothing and Women Clothing: the data format follows the [MAML repository](https://github.com/liufancs/MAML).
-- Beauty: download the Beauty 5-core reviews, metadata, and image features from the [UCSD Amazon Review Data](https://mcauleylab.ucsd.edu/public_datasets/data/amazon/datasets.html).
+- Men Clothing and Women Clothing: obtain the reviews, metadata, and image features for the **Clothing, Shoes and Jewelry** category from the [UCSD Amazon Review Data](https://mcauleylab.ucsd.edu/public_datasets/data/amazon/datasets.html). Men Clothing and Women Clothing are derived subsets rather than separate datasets distributed by the original provider.
+- Beauty: obtain the Beauty 5-core reviews, metadata, and image features from the [UCSD Amazon Review Data](https://mcauleylab.ucsd.edu/public_datasets/data/amazon/datasets.html).
 - MicroLens: download the interaction data and modality features from the [official MicroLens repository](https://github.com/westlake-repl/MicroLens).
 
 The expected processed layout is:
@@ -139,8 +139,7 @@ x_label = 2  testing
 
 TriCAM additionally requires `image_feat.npy` and `text_feat.npy`; interaction JSON files alone are not sufficient to run the model.
 
-- Men Clothing and Women Clothing: MAML provides image features and Doc2Vec resources in its [processed-data folder](https://drive.google.com/drive/folders/1OuBAC-O9oK5JBgVTUqmSlAsWQ7OPtirr).
-- Beauty: the UCSD Amazon data page provides product metadata and image features.
+- Men Clothing, Women Clothing, and Beauty: the UCSD Amazon data page provides reviews, product metadata, image URLs, and pre-extracted 4096-dimensional visual features. Text features must be extracted from the review or product text and aligned with the integer item IDs used by the interaction files.
 - MicroLens: the official project provides extracted multimodal features.
 
 Prepare or obtain the corresponding feature matrices and save them as `image_feat.npy` and `text_feat.npy` in the selected dataset directory. `prepare_splits.py` only creates the interaction JSON files; it does not create modality features.
